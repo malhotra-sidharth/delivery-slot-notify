@@ -2,8 +2,8 @@
   "name": "whole-foods-amazon-fresh-slot-notifier",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
+    "build": "gulp && webpack --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/malhotra-sidharth/whole-foods-amazon-fresh-slot-notifier/issues"
   },
-  "homepage": "https://github.com/malhotra-sidharth/whole-foods-amazon-fresh-slot-notifier#readme"
+  "homepage": "https://github.com/malhotra-sidharth/whole-foods-amazon-fresh-slot-notifier#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-merge-json": "^2.1.0",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
 }

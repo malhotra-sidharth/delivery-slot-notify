@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "strictNullChecks": false,
+    "baseUrl": "./",
+    "module": "es6",
+    "sourceMap": true,
+    "declaration": false,
+    "rootDir": ".",
+    "noImplicitAny": true,
+    "target": "es5",
+    "lib": ["es2018", "dom"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "importHelpers": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noImplicitReturns": true,
+    "pretty": true,
+    "strict": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+  }
+}
