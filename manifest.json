@@ -5,11 +5,13 @@
   "permissions": [],
  "background": {},
   "browser_action": {
-    "default_title": "Delivery Slot Notify"
+    "default_title": "Delivery Slot Notify",
+		"default_popup": "popup/popup.html"
   },
   "icons": {
     "32": "assets/img/icon.png"
   },
+	"options_page": "option/option.html",
   "content_scripts": [
     {
       "matches": [

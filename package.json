@@ -19,6 +19,7 @@
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
+    "gulp-cleanhtml": "^1.0.3",
     "gulp-merge-json": "^2.1.0",
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.3",
