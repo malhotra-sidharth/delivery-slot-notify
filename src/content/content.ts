@@ -34,7 +34,7 @@ function initializeNotifier(): void {
           showNotification();
         }
         });
-  }, 10000)
+  }, 30000)
 }
 
 function initializeWidget(): void {
