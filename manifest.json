@@ -1,0 +1,35 @@
+{
+	"name": "Whole Foods and Amazon Fresh Slot Notify",
+	"version": "1.0.0",
+	"description": "",
+  "permissions": [
+    "tabs",
+    "activeTab",
+  ],
+ "background": {
+    "scripts": ["scripts/background.js", "assets/js/analytics.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Whole Foods and Amazon Fresh Slot Notify",
+  },
+  "icons": {
+    "32": "assets/img/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://amazon.com*"
+      ],
+      "css": [],
+      "js": [
+        "scripts/content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "assets/js/analytics.js",
+  ],
+ "manifest_version": 2,
+ "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com; object-src 'self'"
+ }

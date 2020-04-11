@@ -1,0 +1,19 @@
+{
+  "name": "whole-foods-amazon-fresh-slot-notifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malhotra-sidharth/whole-foods-amazon-fresh-slot-notifier.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malhotra-sidharth/whole-foods-amazon-fresh-slot-notifier/issues"
+  },
+  "homepage": "https://github.com/malhotra-sidharth/whole-foods-amazon-fresh-slot-notifier#readme"
+}
