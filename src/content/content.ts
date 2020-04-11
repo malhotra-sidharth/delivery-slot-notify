@@ -26,15 +26,20 @@ function initializeNotifications(): void {
 function initializeNotifier(): void {
   interval = setInterval(() => {
     let buttonTexts = document.querySelectorAll<HTMLElement>(".ufss-date-select-toggle-text-availability");
+    let count = 0;
     buttonTexts.forEach(btnText => {
         if (btnText.innerText && btnText.innerText === "Not available") {
-          location.reload();
+          count++;
         }
         else {
           showNotification();
         }
-        });
-  }, 30000)
+    });
+    if (buttonTexts.length > 0 && count === buttonTexts.length) {
+      count = 0;
+      location.reload();
+    }
+  }, 15000)
 }
 
 function initializeWidget(): void {
