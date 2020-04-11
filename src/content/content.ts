@@ -1,4 +1,5 @@
 // @ref: https://stackoverflow.com/a/13328513
+let interval: any = null;
 function showNotification(): void {
  if (Notification.permission !== "granted")
   Notification.requestPermission();
@@ -20,7 +21,7 @@ function initializeNotifications(): void {
 }
 
 function initializeNotifier(): void {
-  let interval = setInterval(() => {
+  interval = setInterval(() => {
     let buttonTexts = document.querySelectorAll<HTMLElement>(".ufss-date-select-toggle-text-availability");
     buttonTexts.forEach(btnText => {
         if (btnText.innerText && btnText.innerText === "Not available") {
@@ -34,6 +35,8 @@ function initializeNotifier(): void {
 }
 
 function initializeScript(): void {
+  if (interval)
+    clearInterval(interval);
   initializeNotifications();
   initializeNotifier();
 }
