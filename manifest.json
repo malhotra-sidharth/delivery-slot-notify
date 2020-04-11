@@ -5,9 +5,7 @@
   "permissions": [
     "activeTab"
   ],
- "background": {
-    "persistent": false
-  },
+ "background": {},
   "browser_action": {
     "default_title": "Delivery Slot Notify"
   },
