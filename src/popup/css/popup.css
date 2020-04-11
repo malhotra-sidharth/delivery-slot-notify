@@ -1,11 +1,17 @@
 .dsn-main {
-  height: 200px;
+  height: 150px;
   width: 200px;
 }
 
+.dsn-text {
+  text-align: center;
+  font-weight: bold;
+}
+
 .dsn-btn {
-  margin-top: 80px;
-  margin-left: 80px;
+  width: 100px;
+  margin-top: 10px;
+  margin-left: 50px;
   background: #8CC63F;
   color: #000;
 }
