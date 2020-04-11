@@ -18,6 +18,9 @@ function initializeNotifications(): void {
 
   if (Notification.permission !== 'granted')
     Notification.requestPermission();
+
+  if (Notification.permission === 'denied')
+    alert('Your Chrome notifications are blocked. Please enable them to get notifed about delivery windows availability. Click on the lock icon on the top left and select "Allow" from notification list')
 }
 
 function initializeNotifier(): void {
