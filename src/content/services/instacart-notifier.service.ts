@@ -21,7 +21,7 @@ export class InstacartNotifier extends Notifier {
           this.showNotification();
         }
       }
-    }, 15000); // tslint:disable-line
+    }, 20000); // tslint:disable-line
   }
 
   protected getSchedulePageIdentifier(): HTMLElement {
