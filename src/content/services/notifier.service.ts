@@ -16,8 +16,8 @@ export abstract class Notifier {
     Notification.requestPermission();
    else {
     let notification = new Notification("Delivery Slot Available", {
-     icon: "./assets/img/icon.png",
-     body: "One or Few Delivery Slot are Available",
+     icon: "https://i.ibb.co/wrjsMv9/icon.png",
+     body: "One or More Delivery Slot are Available",
     });
    }
   }
@@ -31,9 +31,9 @@ export abstract class Notifier {
       Notification.requestPermission();
 
     if (Notification.permission === "denied")
-      alert('Your Chrome notifications are blocked. Please enable them to get \
+      alert("Your Chrome notifications are blocked. Please enable them to get \
       notifed about delivery windows availability. Click on the lock icon on \
-      the top left and select "Allow" from notification list');
+      the top left and select 'Allow' from notification list");
   }
 
   protected initializeWidget(): void {
@@ -69,7 +69,7 @@ export abstract class Notifier {
               height="50">
             </p>
             <h3>
-              Please leave the tab open and
+              Please leave this tab open and
               I will notify you when a delivery slot is available.
             </h3>
           </div>
