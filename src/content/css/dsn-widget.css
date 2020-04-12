@@ -2,7 +2,7 @@
   background: #8cc63f;
   display: block;
   min-height: 50px;
-  width: 300px;
+  width: 200px;
   z-index: 99999;
   position: absolute;
   right: 0;
@@ -14,4 +14,14 @@
 
 .dsn-slot-notifier-widget > p {
   text-align:center;
+}
+
+.dsn-slot-notifier-widget > p > img {
+  height: 40px !important;
+}
+
+.dsn-slot-notifier-widget > h3 {
+  font-weight: bold !important;
+  font-size: 12px !important;
+  color: #000 !important;
 }

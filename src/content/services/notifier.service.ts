@@ -10,6 +10,8 @@ export abstract class Notifier {
 
   protected abstract getSchedulePageIdentifier(): HTMLElement;
 
+  protected abstract getSchedulePageIdentifierText(): string;
+
   // @ref: https://stackoverflow.com/a/13328513
   protected showNotification(): void {
    if (Notification.permission !== "granted")
@@ -38,14 +40,15 @@ export abstract class Notifier {
 
   protected initializeWidget(): void {
     let widgetInterval = setInterval(() => {
-      let scheduleTitle = this.getSchedulePageIdentifier();
+      let scheduleIdentifier = this.getSchedulePageIdentifier();
+      let scheduleIdentifierText = this.getSchedulePageIdentifierText();
       let slotNotifier = document.querySelector<HTMLElement>(
         ".dsn-slot-notifier-widget"
       );
 
       if (!slotNotifier &&
-          scheduleTitle &&
-          scheduleTitle.innerText === "Schedule your order"
+          scheduleIdentifier &&
+          scheduleIdentifier.innerText === scheduleIdentifierText
         ) {
         let widget = document.createElement("div");
         widget.innerHTML = `

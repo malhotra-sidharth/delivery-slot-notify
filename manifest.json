@@ -15,7 +15,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.amazon.com/*"
+        "https://*.amazon.com/*",
+				"https://*.instacart.com/*"
       ],
 			"css": [
 				"content/css/dsn-widget.css"

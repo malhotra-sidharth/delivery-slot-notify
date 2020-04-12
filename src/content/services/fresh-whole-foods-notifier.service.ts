@@ -31,4 +31,8 @@ export class AmazonFreshWholeFoodsNotifier extends Notifier {
 
     return null;
   }
+
+  protected getSchedulePageIdentifierText(): string {
+    return "Schedule your order";
+  }
 }
