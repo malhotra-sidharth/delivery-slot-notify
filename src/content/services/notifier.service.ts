@@ -49,19 +49,8 @@ export abstract class Notifier {
         ) {
         let widget = document.createElement("div");
         widget.innerHTML = `
-          <div class="dsn-slot-notifier-widget"
-            style="background: #8cc63f;
-            display: block;
-            min-height: 50px;
-            width: 300px;
-            z-index: 99999;
-            position: absolute;
-            right: 0;
-            top: 10%;
-            box-shadow: 1px 1px 32px;
-            padding: 12px 10px;
-            border-radius: 5px;">
-            <p style="text-align:center;">
+          <div class="dsn-slot-notifier-widget">
+            <p>
               <img
               src="https://i.ibb.co/wrjsMv9/icon.png"
               alt="icon"

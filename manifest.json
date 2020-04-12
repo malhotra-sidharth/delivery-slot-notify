@@ -17,6 +17,9 @@
       "matches": [
         "https://*.amazon.com/*"
       ],
+			"css": [
+				"content/css/dsn-widget.css"
+			],
       "js": [
         "scripts/content.js"
       ]
