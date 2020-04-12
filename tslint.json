@@ -1,0 +1,12 @@
+{
+  "extends": "typescript-styleguide-tslint/tslint.json",
+  "linterOptions": {
+    "exclude": [
+      "**/*.json",
+      "**/__tests__/**/*.[jt]s?(x)"
+    ]
+  },
+  "rules": {
+    "quotemark": [true, "double", "avoid-escape", "avoid-template"]
+  }
+}
