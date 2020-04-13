@@ -48,7 +48,7 @@ export abstract class Notifier {
 
       if (!slotNotifier &&
           scheduleIdentifier &&
-          scheduleIdentifier.innerText.includes(scheduleIdentifierText) 
+          scheduleIdentifier.innerText.includes(scheduleIdentifierText)
         ) {
         let widget = document.createElement("div");
         widget.innerHTML = `
