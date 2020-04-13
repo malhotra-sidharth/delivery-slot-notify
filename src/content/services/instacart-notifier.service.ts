@@ -6,38 +6,45 @@ import { Notifier } from "./notifier.service";
 export class InstacartNotifier extends Notifier {
   protected initializeNotifier(): void {
     let interval = setInterval(() => {
-      let buttons = document.querySelectorAll<HTMLElement>(
-        ".rmq-4518a97d"
+      let deliveryOptions = document.querySelectorAll<HTMLInputElement>(
+        "input[name='delivery_option']"
       );
 
-      if (buttons[2]) { // tslint:disable-line
-        let deliveryBtnText = buttons[2].children[1].textContent; // tslint:disable-line
-        let identifier = this.getSchedulePageIdentifier();
-        if (deliveryBtnText === "No upcoming availability") {
-            if (identifier.textContent === this.getSchedulePageIdentifierText())
-              location.reload();
-        }
-        else {
+      let identifier = this.getSchedulePageIdentifier();
+      if (identifier) {
+        let isSchedulePage = identifier.textContent.includes(
+          this.getSchedulePageIdentifierText()
+        );
+
+        if (deliveryOptions.length > 0) {
           this.showNotification();
+        }
+        else if (isSchedulePage) {
+          location.reload();
         }
       }
     }, 20000); // tslint:disable-line
   }
 
   protected getSchedulePageIdentifier(): HTMLElement {
-    let identifierParents =
+    let allCards =
       document.querySelectorAll<HTMLElement>(".rmq-28f9c13a")  // tslint:disable-line
 
-    if (identifierParents[2] &&  // tslint:disable-line
-        identifierParents[2].children[0] && // tslint:disable-line
-        identifierParents[2].children[0].children[1]) {// tslint:disable-line
-        return <HTMLElement> identifierParents[2].children[0].children[1];  // tslint:disable-line
+    for (let i = 0; i < allCards.length; i++) {
+      let card = allCards[i];
+      if (card.classList.length === 1) {
+        if (card.children[0] &&
+            card.children[0].children[1]
+          ) {
+              return <HTMLElement> card.children[0].children[1];
+            }
+      }
     }
 
     return null;
   }
 
   protected getSchedulePageIdentifierText(): string {
-    return "Choose delivery time";
+    return "delivery time";
   }
 }

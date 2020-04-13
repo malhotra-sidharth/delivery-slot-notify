@@ -19,7 +19,7 @@ export abstract class Notifier {
    else {
     let notification = new Notification("Delivery Slot Available", {
      icon: "https://i.ibb.co/wrjsMv9/icon.png",
-     body: "One or More Delivery Slot are Available",
+     body: "One or More Delivery Slots are Available",
     });
    }
   }
@@ -48,7 +48,7 @@ export abstract class Notifier {
 
       if (!slotNotifier &&
           scheduleIdentifier &&
-          scheduleIdentifier.innerText === scheduleIdentifierText
+          scheduleIdentifier.innerText.includes(scheduleIdentifierText) 
         ) {
         let widget = document.createElement("div");
         widget.innerHTML = `
