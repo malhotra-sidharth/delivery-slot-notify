@@ -22,7 +22,7 @@ export class AmazonFreshWholeFoodsNotifier extends Notifier {
         count = 0;
         location.reload();
       }
-    }, 15000); // tslint:disable-line
+    }, 20000); // tslint:disable-line
   }
 
   protected getSchedulePageIdentifier(): HTMLElement {

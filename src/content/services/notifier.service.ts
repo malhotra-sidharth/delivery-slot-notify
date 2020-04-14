@@ -22,6 +22,8 @@ export abstract class Notifier {
      body: "One or More Delivery Slots are Available",
     });
    }
+   let audio = new Audio("https://sndup.net/62k9/notification3.mp3");
+   audio.play();
   }
 
   protected initializeNotifications(): void {

@@ -37,5 +37,5 @@
   ],
   "web_accessible_resources": [],
  "manifest_version": 2,
- "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+ "content_security_policy": "script-src 'self' 'unsafe-eval' https://sndup.net https://i.ibb.co; object-src 'self'"
  }
