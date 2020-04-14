@@ -1,9 +1,12 @@
 export abstract class Notifier {
 
+  protected audioSiren: HTMLAudioElement;
+
   initializeScript(): void {
     this.initializeNotifications();
     this.initializeNotifier();
     this.initializeWidget();
+    this.audioSiren = new Audio("https://sndup.net/62k9/notification3.mp3");
   }
 
   protected abstract initializeNotifier(): void;
@@ -22,8 +25,8 @@ export abstract class Notifier {
      body: "One or More Delivery Slots are Available",
     });
    }
-   let audio = new Audio("https://sndup.net/62k9/notification3.mp3");
-   audio.play();
+
+   this.audioSiren.play();
   }
 
   protected initializeNotifications(): void {
