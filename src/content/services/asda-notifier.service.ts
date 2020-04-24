@@ -5,6 +5,7 @@ import { Notifier } from "./notifier.service";
 @singleton()
 export class AsdaNotifier extends Notifier {
   protected initializeNotifier(): void {
+    let lastNotificationDelivered = 0;
     let interval = setInterval(() => {
       let buttonTexts = document.querySelectorAll<HTMLElement>(
         ".co-slots__price-content.co-slots__price-content--box.co-slots__price-content--pointer"
@@ -15,7 +16,9 @@ export class AsdaNotifier extends Notifier {
             count++;
           }
           else {
-            this.showNotification();
+            if (lastNotificationDelivered % 3 === 0) {// tslint:disable-line
+              this.showNotification();
+            }
           }
       });
       if (buttonTexts.length > 0 && count === buttonTexts.length) {
@@ -27,9 +30,11 @@ export class AsdaNotifier extends Notifier {
         }
         else {
           nextBtn.click();
+          lastNotificationDelivered = -1;
         }
         count = 0;
       }
+      lastNotificationDelivered++;
     }, 3000); // tslint:disable-line
   }
 

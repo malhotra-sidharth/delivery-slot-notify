@@ -73,7 +73,12 @@ export abstract class Notifier {
         `;
 
         document.body.appendChild(widget);
-        clearInterval(widgetInterval);
+      }
+      else if (slotNotifier &&
+        (!scheduleIdentifier ||
+          !scheduleIdentifier.innerText.includes(scheduleIdentifierText))
+        ) {
+        slotNotifier.remove();
       }
     }, 500); // tslint:disable-line
   }
