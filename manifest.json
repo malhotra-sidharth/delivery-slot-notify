@@ -1,23 +1,19 @@
 {
 	"name": "Delivery Slot Notify",
-	"version": "1.4.0",
+	"version": "1.4.1",
 	"description": "Get notified when delivery windows is available on WholeFoods, PrimeNow, Amazon Fresh and Instacart (US & Canada)",
   "permissions": [],
- "background": {},
   "browser_action": {
     "default_title": "Delivery Slot Notify",
 		"default_popup": "popup/popup.html"
-  },
-  "icons": {
-    "32": "assets/img/icon.png"
   },
 	"options_page": "option/option.html",
 	"icons": {
 		"16": "assets/img/icon16.png",
 		"32": "assets/img/icon32.png",
-		"48": "assets/img/icon.png",
-		"64": "assets/img/icon.png",
-		"128": "assets/img/icon.png"
+		"48": "assets/img/icon48.png",
+		"64": "assets/img/icon64.png",
+		"128": "assets/img/icon128.png"
 	},
   "content_scripts": [
     {
