@@ -11,13 +11,17 @@ export class AsdaNotifier extends Notifier {
         ".co-slots__price-content.co-slots__price-content--box.co-slots__price-content--pointer"
       );
       let count = 0;
+      let notificationFired = false;
       buttonTexts.forEach((btnText) => {
           if (btnText.textContent && btnText.textContent === "Sold OutC&C?") {
             count++;
           }
           else {
-            if (lastNotificationDelivered % 3 === 0) {// tslint:disable-line
+            if (lastNotificationDelivered % 3 === 0 && // tslint:disable-line
+              !notificationFired
+              ) {
               this.showNotification();
+              notificationFired = true;
             }
           }
       });
@@ -30,6 +34,7 @@ export class AsdaNotifier extends Notifier {
         }
         else {
           nextBtn.click();
+          notificationFired = false;
           lastNotificationDelivered = -1;
         }
         count = 0;
