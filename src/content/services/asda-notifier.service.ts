@@ -4,7 +4,10 @@ import { Notifier } from "./notifier.service";
 
 @singleton()
 export class AsdaNotifier extends Notifier {
+
   protected initializeNotifier(): void {
+    this.switchToSelectedDeliveryOption();
+    this.addEventListeners();
     let lastNotificationDelivered = 0;
     let interval = setInterval(() => {
       let unavailableSlots = 0;
@@ -17,7 +20,7 @@ export class AsdaNotifier extends Notifier {
           totalSlots++;
           if (!btnText.classList.contains(".delivery-slot-notify-checked") &&
             btnText.textContent &&
-            btnText.textContent === "Sold OutC&C?"
+            btnText.textContent.includes("Sold Out")
           ) {
             btnText.classList.add("delivery-slot-notify-checked");
             unavailableSlots++;
@@ -26,6 +29,7 @@ export class AsdaNotifier extends Notifier {
             if (lastNotificationDelivered % 3 === 0 && // tslint:disable-line
               !notificationFired
               ) {
+              btnText.click();
               this.showNotification();
               notificationFired = true;
             }
@@ -56,5 +60,44 @@ export class AsdaNotifier extends Notifier {
 
   protected getSchedulePageIdentifierText(): string {
     return "Delivery Slot";
+  }
+
+  protected switchToSelectedDeliveryOption(): void {
+    let interval = setInterval(() => {
+      let deliveryOptions = document.querySelectorAll<HTMLElement>(
+        ".asda-tab__label"
+      );
+      let savedOption = localStorage.getItem("delivery-slot-notify-asda-type");
+      deliveryOptions.forEach((option: HTMLElement) => {
+        if (option.textContent === savedOption) {
+          option.click();
+        }
+      });
+
+      if (deliveryOptions.length > 0) {
+        clearInterval(interval);
+      }
+    }, 300) // tslint:disable-line
+  }
+
+  protected addEventListeners(): void {
+    let interval = setInterval(() => {
+      let deliveryOptions = document.querySelectorAll<HTMLElement>(
+        ".asda-tab.asda-tab--fluid"
+      );
+
+      deliveryOptions.forEach((option: HTMLElement) => {
+        option.addEventListener("click", () => {
+          localStorage.setItem(
+            "delivery-slot-notify-asda-type",
+            option.textContent
+          );
+        });
+      });
+
+      if (deliveryOptions.length > 0) {
+        clearInterval(interval);
+      }
+    }, 300) // tslint:disable-line
   }
 }
