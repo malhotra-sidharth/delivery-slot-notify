@@ -13,14 +13,15 @@ export class AsdaNotifier extends Notifier {
       let unavailableSlots = 0;
       let totalSlots = 0;
       let buttonTexts = document.querySelectorAll<HTMLElement>(
-        ".co-slots__price-content.co-slots__price-content--box.co-slots__price-content--pointer"
+        ".slot-button__button"
       );
       let notificationFired = false;
       buttonTexts.forEach((btnText) => {
           totalSlots++;
           if (!btnText.classList.contains(".delivery-slot-notify-checked") &&
             btnText.textContent &&
-            btnText.textContent.includes("Sold Out")
+            btnText.textContent.toLowerCase()
+              .includes("sold out")
           ) {
             btnText.classList.add("delivery-slot-notify-checked");
             unavailableSlots++;
@@ -37,7 +38,7 @@ export class AsdaNotifier extends Notifier {
       });
       if (totalSlots > 0 && totalSlots === unavailableSlots) {
         let nextBtn = document.querySelector<HTMLButtonElement>(
-          "[aria-label='Next slots']"
+          "[aria-label='next day slot']"
         );
         if (nextBtn.disabled) {
           location.reload();
