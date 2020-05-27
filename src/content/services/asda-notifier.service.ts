@@ -68,7 +68,8 @@ export class AsdaNotifier extends Notifier {
       let deliveryOptions = document.querySelectorAll<HTMLElement>(
         ".asda-tab__label"
       );
-      let savedOption = localStorage.getItem("delivery-slot-notify-asda-type");
+      let savedOption =
+        sessionStorage.getItem("delivery-slot-notify-asda-type");
       deliveryOptions.forEach((option: HTMLElement) => {
         if (option.textContent === savedOption) {
           option.click();
@@ -89,7 +90,7 @@ export class AsdaNotifier extends Notifier {
 
       deliveryOptions.forEach((option: HTMLElement) => {
         option.addEventListener("click", () => {
-          localStorage.setItem(
+          sessionStorage.setItem(
             "delivery-slot-notify-asda-type",
             option.textContent
           );

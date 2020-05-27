@@ -1,6 +1,6 @@
 {
   "name": "delivery-slot-notify",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "",
   "scripts": {
     "build": "gulp && webpack --config webpack.config.js",
